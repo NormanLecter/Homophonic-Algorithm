@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Szyfrowanie Wolniaka</title>
+</head>
+<body>
+<center>
+  <div class="container">
+    <br>
+    <h1><b>Szyfrowanie Wolniaka</b></h1>
+    <br>
+    <label class="btn btn-success" style="cursor:pointer" for="my-file-selector">
+      <input type="file" id="my-file-selector" style="display: none;" class="btn btn-success" accept="json" onchange="czytajJson(event)">
+      <span id="wypelnienie">Wczytaj plik JSON jako klucz</span>
+    </label>
+    <br>
+    <br>
+    <div class="dropdown" id="menuRozwijane"></div>
+    <br>
+    <div id="dzialanie"></div>
+    <br>
+</div>
+</center>
+</body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="ahPlik.js"></script>
+<script>
+  function plikDoRozwiazania(){
+    var html = "<br><label class='btn btn-warning' style='cursor:pointer' for='deszyfrowaniePlik'><input type='file' id='deszyfrowaniePlik' style='display: none;' class='btn btn-warning' accept='text/plain' onchange='czytajPlikDeszyfruj(event)'><span id='wypelnienieTxt'>Wczytaj plik TXT z szyfrem do rozwiązania</span></label><br><br><div id='output'></div>";
+    document.getElementById("dzialanie").innerHTML = html;
+  }
+
+  function plikDoZaszyfrowania(){
+    var html = "<br><label class='btn btn-warning' style='cursor:pointer' for='szyfrowaniePlik'><input type='file' id='szyfrowaniePlik' style='display: none;' accept='text/plain' onchange='czytajPlikSzyfruj(event)'><span id='wypelnienieTxt'>Wczytaj plik TXT z tekstem do zaszyfrowania</span></label><br><div id='output'></div>";
+    document.getElementById("dzialanie").innerHTML = html;
+  }
+
+  function zTekstuSzyfruj(){
+    var html = "<div class='form-group'><label for='usr'>Wpisz tekst do zaszyfrowania</label><input type='text' class='form-control' id='wpis'><br><button type='button' class='btn btn-info' style='cursor:pointer' onclick='zWpisuSzyfruj()'>Szyfruj</button><br><br></div><div id='output'></div>";
+    document.getElementById("dzialanie").innerHTML = html;
+  }
+
+  function zTekstuDeszyfruj(){
+    var html = "<div class='form-group'><label for='usr'>Wpisz szyfr do rozwiązania</label><input type='text' class='form-control' id='wpis'><br><button type='button' class='btn btn-info' style='cursor:pointer' onclick='zWpisuDeszyfruj()'>Rozwiąż</button><br><br></div><div id='output'></div>";
+    document.getElementById("dzialanie").innerHTML = html;
+  }
+</script>
+</html>
