@@ -16,6 +16,7 @@ HTML
 CSS
 BLOB + FileReader class
 JSON
+Twitter Bootstrap
 
 ## How to run
 1. Download all files
